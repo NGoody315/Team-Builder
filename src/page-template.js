@@ -1,4 +1,4 @@
-function generateManager(data){
+function generatePage(){
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -19,13 +19,13 @@ function generateManager(data){
             <div class="container">
                 <div class="row row-cols-2">
                     <div class="col card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">${data.role}</div>
+                    <div class="card-header">${manager.role}</div>
                     <div class="card-body">
-                        <h5 class="card-title">${data.name}</h5>
+                        <h5 class="card-title">${manager.name}</h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">ID: ${data.id}</li>
-                            <li class="list-group-item">Email: ${data.email}</li>
-                            <li class="list-group-item">Office: ${data.officeNumber}</li>
+                            <li class="list-group-item">ID: ${manager.id}</li>
+                            <li class="list-group-item">Email: ${manager.email}</li>
+                            <li class="list-group-item">Office: ${manager.officeNumber}</li>
                 </div>
             </div>
         </header>
@@ -33,3 +33,5 @@ function generateManager(data){
       </html>
     `
 }
+
+prompt

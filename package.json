@@ -1,0 +1,28 @@
+{
+  "name": "team-builder",
+  "version": "1.0.0",
+  "description": "Week 10 Challenge",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NGoody315/Team-Builder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NGoody315/Team-Builder/issues"
+  },
+  "homepage": "https://github.com/NGoody315/Team-Builder#readme"
+}
