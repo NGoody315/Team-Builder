@@ -11,10 +11,10 @@ An app that allows users to store employee information via the command line and 
 5. [Questions](#question)
 
 ## <a name="install"/>Installation
-`Install Node - npm init` 
-`Install Inquirer - npm inquirer`
-`Install Jest - npm install jest --save-dev`
-`Install Email Validator - npm install email-validator`
+`Install Node - npm init`  
+`Install Inquirer - npm inquirer`  
+`Install Jest - npm install jest --save-dev`  
+`Install Email Validator - npm install email-validator`  
 
 ## <a name="usage"/>Usage
 Here's a walkthrough video on how to use this app: https://drive.google.com/file/d/1gn-zNHOTIDnzzJhj_PJe4sNW9d3aUvgB/view
