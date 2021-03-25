@@ -1,37 +1,72 @@
-function generatePage(){
-    return `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Our Team</title>
-        <link rel="stylesheet" href=<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link rel="stylesheet" type="css" href="../dist/styles.css">
-      </head>
+const generateHTML = function (teamString) {
 
-      <body>
-        <header>
-            <div class="position-absolute top-0 start-50 translate-middle-x">
-                <h1 class="title">Our Team</h1>
-            </div>
-            <div class="container">
-                <div class="row row-cols-2">
-                    <div class="col card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">${manager.role}</div>
-                    <div class="card-body">
-                        <h5 class="card-title">${manager.name}</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">ID: ${manager.id}</li>
-                            <li class="list-group-item">Email: ${manager.email}</li>
-                            <li class="list-group-item">Office: ${manager.officeNumber}</li>
-                </div>
-            </div>
-        </header>
-      </body>
-      </html>
-    `
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Team Portfolio</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+</style>
+</head>
+<body>
+<div class="header">
+<div class="jumbotron bg-danger">
+   <h1 class="display-4 text-white text-center">My Team</h1>
+</div>
+</div>
+<div class="container-body container-fluid">
+   <div class="row">
+        ${teamString} 
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/257de25400.js" crossorigin="anonymous"></script>  
+</body>
+</html>`
+
 }
 
-prompt
+// Generates cards for each employee class based on user input in Inquirer
+const generateCard = function (arr) {
+
+    // Fontawesome Icons change based on role
+    let positionIcon;
+    // Criteria for display
+    let roleInfo;
+
+    if (arr.title === "Manager") {
+        positionIcon = `<i class="fas fa-mug-hot"></i>`
+        roleInfo = `Office Number: ${arr.officeNumber}`
+    } else if (arr.title === "Engineer") {
+        positionIcon = `<i class="fas fa-glasses"></i>`
+        roleInfo = `GitHub Username: <a href="https://github.com/${arr.github}" target="_blank">${arr.github}</a>`
+    } else if (arr.title === "Intern") {
+        positionIcon = `<i class="fas fa-user-graduate"></i>`
+        roleInfo = `School: ${arr.school}`
+    }
+
+    return `
+    
+<div class="col-md-4 col-sm-6 col-12 col-lg-3">    
+    <div class="card shadow-lg mb-5 bg-white rounded">
+        <div class="card-header bg-primary">
+            <h4 class="text-white text-center">${arr.name}</h4>  
+            <h4 class="text-white text-center">${positionIcon}</i> ${arr.title}</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                <li>Employee ID: ${arr.id}</li>
+                <li>Email: <a href="mailto:${arr.email}">${arr.email}</a></li>
+                <li>${roleInfo}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+`
+}
+
+exports.generateHTML = generateHTML;
+exports.generateCard = generateCard;
