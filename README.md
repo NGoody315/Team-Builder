@@ -17,7 +17,7 @@ An app that allows users to store employee information via the command line and 
 `Install Email Validator - npm install email-validator`
 
 ## <a name="usage"/>Usage
-Here's a walkthrough video on how to use this app:
+Here's a walkthrough video on how to use this app: https://drive.google.com/file/d/1gn-zNHOTIDnzzJhj_PJe4sNW9d3aUvgB/view
 
 ## <a name="collab"/>Collaborations
 NA
